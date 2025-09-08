@@ -1,0 +1,16 @@
+# Java build output
+out/
+target/
+build/
+*.class
+
+# Maven wrapper cache
+.mvn/wrapper/dists/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
