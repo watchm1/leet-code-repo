@@ -34,4 +34,28 @@ public class Algorithms {
         }
         return dummy.next;
     }
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int n = nums1.length;
+        int m = nums2.length;
+        int[] arr = new int[m+n];
+        int i=0, j=0, k=0;
+        while (i< n && j < m) {
+            arr[k++] = nums1[i] < nums2[j] ? nums1[i++] : nums2[j++];
+        }
+        while(i < n) {
+            arr[k++] = nums1[i++];
+        }
+        while(j < m) {
+            arr[k++] = nums2[j++];
+        }
+        
+        if ((m+n) % 2 == 0) {
+            int firstIndex  = ((m+n)/2 -1);
+            int secondIndex = (m+n)/2;
+
+            return (arr[firstIndex] + arr[secondIndex])/2.0;
+        }
+        return arr[(m+n) / 2];
+        
+    }
 }
